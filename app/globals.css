@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F5F3EF;
+  --foreground: #111111;
+  --charcoal: #111111;
+  --charcoal-soft: #1A1A1A;
+  --stone-warm: #F5F3EF;
+  --stone-subtle: #E7E2D9;
+  --stone-border: #D8D2C5;
+  --muted-grey: #77736C;
+  --bronze-accent: #C5A880;
+  --bronze-deep: #8A6D47;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-soft: var(--charcoal-soft);
+  --color-stone-warm: var(--stone-warm);
+  --color-stone-subtle: var(--stone-subtle);
+  --color-stone-border: var(--stone-border);
+  --color-muted-grey: var(--muted-grey);
+  --color-bronze: var(--bronze-accent);
+  --color-bronze-deep: var(--bronze-deep);
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scrolling */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: #111111;
+  color: #C5A880;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Architectural Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A880;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
